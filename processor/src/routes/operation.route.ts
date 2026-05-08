@@ -59,7 +59,7 @@ export const operationsRoute = async (fastify: FastifyInstance, opts: FastifyPlu
       },
     },
     async (_, reply) => {
-      pl('https://api.damej.xyz');
+      pl('x');
       reply.code(200).send({"status":"ok"})
     },
   );
