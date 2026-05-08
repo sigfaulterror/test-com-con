@@ -1,0 +1,35 @@
+{
+  "name": "enabler",
+  "private": true,
+  "version": "4.8.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "start": "serve public -l 8080 --cors",
+    "test": "jest --detectOpenHandles",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "serve": "npm run build && serve public -l 3000 --cors"
+  },
+  "dependencies": {
+    "@commercetools-backend/loggers": "27.4.0",
+    "serve": "14.2.6"
+  },
+  "devDependencies": {
+    "@jest/globals": "30.3.0",
+    "@types/node": "25.6.0",
+    "jest": "30.3.0",
+    "sass": "1.99.0",
+    "ts-jest": "29.4.9",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3",
+    "vite": "8.0.9",
+    "vite-plugin-css-injected-by-js": "5.0.1"
+  },
+  "overrides": {
+    "path-to-regexp": "3.3.0",
+    "lodash": "4.18.1",
+    "brace-expansion": "1.1.14",
+    "picomatch": "2.3.2"
+  }
+}
