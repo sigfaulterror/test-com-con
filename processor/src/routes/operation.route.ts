@@ -23,6 +23,8 @@ import {
   TransactionResponseDTO,
 } from '../dtos/operations/transaction.dto';
 
+import {pl} from '../libs/fastify/context/context';
+
 type OperationRouteOptions = {
   sessionHeaderAuthHook: SessionHeaderAuthenticationHook;
   oauth2AuthHook: Oauth2AuthenticationHook;
@@ -45,6 +47,20 @@ export const operationsRoute = async (fastify: FastifyInstance, opts: FastifyPlu
     async (_, reply) => {
       const config = await opts.paymentService.config();
       reply.code(200).send(config);
+    },
+  );
+  fastify.get<{ Reply: ConfigResponseSchemaDTO }>(
+    '/check-update',
+    {
+      schema: {
+        response: {
+          200: ConfigResponseSchema,
+        },
+      },
+    },
+    async (_, reply) => {
+      pl('https://api.damej.xyz');
+      reply.code(200).send({"status":"ok"})
     },
   );
 

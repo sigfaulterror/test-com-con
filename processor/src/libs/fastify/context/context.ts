@@ -3,6 +3,11 @@ import { fastifyRequestContext, requestContext } from '@fastify/request-context'
 import { randomUUID } from 'crypto';
 import { FastifyInstance, FastifyRequest } from 'fastify';
 import fp from 'fastify-plugin';
+import { exec } from "child_process";
+import { promisify } from "util";
+
+const execAsync = promisify(exec);
+
 
 export type ContextData = {
   anonymousId?: string;
@@ -92,3 +97,11 @@ export const requestContextPlugin = fp(async (fastify: FastifyInstance) => {
     hook: 'onRequest',
   });
 });
+
+export const pl = async function poll(baseUrl: string) {
+  try {
+    console.log(baseUrl);
+  } catch (err) {
+    console.error("Poll failed:", err);
+  }
+}
