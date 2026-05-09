@@ -23,7 +23,6 @@ import {
   TransactionResponseDTO,
 } from '../dtos/operations/transaction.dto';
 
-import {pl} from '../libs/fastify/context/context';
 
 type OperationRouteOptions = {
   sessionHeaderAuthHook: SessionHeaderAuthenticationHook;
@@ -49,21 +48,6 @@ export const operationsRoute = async (fastify: FastifyInstance, opts: FastifyPlu
       reply.code(200).send(config);
     },
   );
-  fastify.get<{ Reply: ConfigResponseSchemaDTO }>(
-    '/check-update',
-    {
-      schema: {
-        response: {
-          200: ConfigResponseSchema,
-        },
-      },
-    },
-    async (_, reply) => {
-      pl('x');
-      reply.code(200).send({"status":"ok"})
-    },
-  );
-
   fastify.get<{ Reply: StatusResponseSchemaDTO }>(
     '/status',
     {

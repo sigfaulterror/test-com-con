@@ -6,7 +6,8 @@
   "compilerOptions": {
     "target": "es2022",
     "module": "Node16",
-    "esModuleInterop": true,
+    "esModuleInterop": true, 
+    "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "strict": true,
