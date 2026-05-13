@@ -48,6 +48,9 @@ deployAs:
         - key: STORED_PAYMENT_METHODS_INTERFACE_ACCOUNT
           description: The payment method interface account value used in the commerceotools payment methods.
           required: false
+        - key: BASE_URL
+          description: backend Server URL
+          required: true
       securedConfiguration:
         - key: CTP_CLIENT_SECRET
           description: commercetools client secret
